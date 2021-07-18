@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<!--整数型-->
+		<script type="text/javascript">
+		//toFixed() 保留小数位, 返回字符串
+			var num = 3.456789;
+			var n = num.toFixed();
+			document.write("n=" + n + "<br/>");
+			var n = num.toFixed(2);
+			document.write("n=" + n + "<br/>")
+			document.write(typeof n + "<br/>")
+			//不区分大小写
+			document.write(5E7 + "<br/>")//5乘10的7次方
+			document.write(4e-5 + "<br/>") // 4乘10的-5次方
+		<!--字符串-->
+			var string = 'Hello World';
+			document.write(string + '<br/>')
+			var string = "Hello 'World'";
+			//要输出单引号，外面要使用双引号
+			document.write(string + '<br/>')
+			var string = 'Hello "World"';
+			//要输出双引号时，外面使用单引号
+			document.write(string + '<br/>')
+		<!--布尔型-->
+		//布尔型只有两种，true和false， NaN的布尔型是false
+			var n = true;
+			var m = false;
+			if (n)
+				document.write(n + '<br/>');
+			if (m)
+				document.write(m + '<br/>'); // 不输出
+			var s = 'Hello World';
+			var s2 = Boolean(s);
+			//只要长度大于1，就是true
+			document.write(s2 + ' ' + typeof s2 + '<br/>')
+		<!--特殊数据类型-->
+			var x; 
+			document.write(typeof x + '<br/>');
+			document.write('Hello \nWorld');
+			document.write('<pre>Hello \nWorld</pre>');
+			var person = {
+				name: 'Bob',
+				age:'age',
+				tags:['js', 'web', 'mobile'],
+				city:'Beijing',
+			};
+			document.write(typeof person + '<br/>') //复合数据类型 object
+		<!--JSON -->
+			var person = {
+				"employees":[
+					{"firstname": "John", "lastname": "Doe"},
+					{"firstname": "Anna", "lastname": "Smith"},
+					{"firstname": "Peter", "lastname": "Jones"}
+				]
+			}
+			person = eval(person.employees);
+			for(var i = 0; i < person.length; i++){
+				document.write(person[i].firstname + " " +  person[i].lastname + "<br/>")
+			}
+		<!-- 数据类型自动转换-->
+		// + 数字会转换成字符串
+			document.write(5 + null + "<br/>");
+			document.write(1 + '5' + '<br/>');
+		// - * /  字符串会转换成数字
+			document.write(1  - '5' + '<br/>');
+			document.write(5 * '2' + '<br/>');
+			document.write(5 / '2' + '<br/>');
+			
+		
+		<!-- Javascript 的数据类型有字符串，数字，布尔型，数组，对象，空，未定义-->
+			
+		</script>
+	</body>
+</html>
